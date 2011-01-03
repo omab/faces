@@ -1,0 +1,4 @@
+*.pyc
+.*.sw[po]
+test_images/
+people/*

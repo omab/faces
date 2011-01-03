@@ -1,0 +1,14 @@
+pyfaces aims to detect a face from a set applying eigenfaces method.
+Fore references http://en.wikipedia.org/wiki/Eigenface
+
+Usage:
+    $ python pyfaces.py --help
+    Usage: pyfaces.py [options]
+
+    Options:
+      -h, --help            show this help message and exit
+      -i IMAGE, --image=IMAGE
+      -d DIRECTORY, --directory=DIRECTORY
+      -f FACES, --faces=FACES
+      -t THRESHOLD, --threshold=THRESHOLD
+      -s, --show     
