@@ -1,5 +1,6 @@
-#!/usr/bin/python2.5
-""" Who is an integration between OpenCV face detection/extraction
+#!/usr/bin/python
+"""
+Who is an integration between OpenCV face detection/extraction
 and pyfaces face recognition (eigenfaces method).
 """
 
@@ -16,6 +17,7 @@ from pyfaces.utils import merge_images
 
 PEOPLE           = 'people'
 PEOPLE_DIRECTORY = join(dirname(abspath(__file__)), PEOPLE)
+
 
 def reduce_result(matches):
     """ Reduces the matches at `matches` removing the
@@ -54,6 +56,7 @@ if __name__ == '__main__':
                       dest='show')
     parser.add_option('-p', '--people', default=PEOPLE_DIRECTORY,
                       dest='people')
+
     (options, args) = parser.parse_args()
 
 

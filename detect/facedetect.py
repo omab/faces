@@ -104,7 +104,7 @@ def detect(image):
         for degree in (-DEFAULT_ROTATE_ANGLE, DEFAULT_ROTATE_ANGLE):
             tmp = tempfile.NamedTemporaryFile(suffix='.' + image.split('.')[-1])
             img.rotate(degree).save(tmp)
-            result += [ rotate(-1 * degree, box) for box in _detect(tmp.name) ]
+            coords += [rotate(-1 * degree, box) for box in _detect(tmp.name)]
             tmp.close()
     return coords
 
@@ -134,5 +134,5 @@ def rotate(degree, box):
     new_x = int((x0 * cos_rad) - (y0 * sin_rad))
     new_y = int((x0 * sin_rad) + (y0 * cos_rad))
 
-    return [ (new_x + orig_x, new_y + orig_y),
-             (new_x + orig_x + x2 - x1, new_y + orig_y + y2 - y1) ]
+    return [(new_x + orig_x, new_y + orig_y),
+            (new_x + orig_x + x2 - x1, new_y + orig_y + y2 - y1)]

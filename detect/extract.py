@@ -1,7 +1,8 @@
-#!/bin/sh
-import optparse, Image
+#!/usr/bin/python
+import sys
+import optparse
+import Image
 
-from os import mkdir
 from os.path import join, split, exists, isdir, isfile 
 
 from facedetect import detect
@@ -24,9 +25,7 @@ def extract(image, directory):
             result.close()
             return image_name
 
-    if not exists(directory):
-        mkdir(directory)
-    elif not isdir(directory):
+    if not exists(directory) or not isdir(directory):
         raise IOError, '"%s" is not a directory' % directory
 
     if not exists(image) or not isfile(image):
